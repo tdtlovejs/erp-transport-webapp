@@ -1,0 +1,371 @@
+{
+    "language": "vi",
+    "label": {
+        "name": "tên",
+        "code": "mã",
+        "logo": "ảnh",
+        "action": "hành động",
+        "want_delete": "bạn có muốn xóa?",
+        "save": "lưu",
+        "ok": "ok",
+        "cancel": "hủy bỏ",
+        "address_info": "thông tin địa chỉ",
+        "search": "nhập từ khóa ...",
+        "no_more": "không còn nữa",
+        "yes": "có",
+        "no": "không",
+        "stop": "dừng",
+        "select": "--- chọn ---",
+        "confirm_delete": "bạn có chắc chắn muốn xóa?",
+        "alert": "cảnh báo",
+        "new_success": "tạo mới thành công",
+        "edit_success": "đã chỉnh sửa thành công",
+        "delete_success": "xóa thành công",
+        "home": "trang chủ",
+        "logout": "đăng xuất",
+        "upload_image": "tải ảnh lên",
+        "field_required": "\"{{field}}\" bắt buộc",
+        "loading": "đang tải...",
+        "add": "thêm",
+        "error": "lỗi",
+        "field_email": "\"{{field}}\" phải là định dạng email!",
+        "month": {
+            "m_1": "tháng giêng",
+            "m_2": "tháng hai",
+            "m_3": "diễu hành",
+            "m_4": "tháng tư",
+            "m_5": "tháng năm",
+            "m_6": "tháng sáu",
+            "m_7": "tháng bảy",
+            "m_8": "tháng tám",
+            "m_9": "tháng chín",
+            "m_10": "tháng mười",
+            "m_11": "tháng mười một",
+            "m_12": "tháng mười hai"
+        }
+    },
+    "module": {
+        "equipment": "thiết bị",
+        "equipmentType": "loại thiết bị",
+        "project": "dự án",
+        "projectType": "loại dự án",
+        "product": "sản phẩm",
+        "productType": "loại sản phẩm",
+        "client": "khách hàng",
+        "employee": "nhân viên",
+        "invoice": "hóa đơn",
+        "gpsRoute": "lộ trình",
+        "transportOrder": "đơn hàng",
+        "vehicle": "phương tiện"
+    },
+    "field": {
+        "logo": "ảnh",
+        "name": "tên",
+        "code": "mã",
+        "description": "mô tả",
+        "address": "địa chỉ",
+        "address_country": "quốc gia",
+        "address_city": "thành phố",
+        "address_postalCode": "mã bưu chính",
+        "address_description": "địa chỉ chi tiết",
+        "address_province": "thành phố/tỉnh",
+        "address_district": "quận/huyện",
+        "address_ward": "phường/xã"
+    },
+    "project": {
+        "label": {
+            "title": "dự án",
+            "listProject": "danh sách dự án",
+            "listProjectType": "danh sách loại dự án",
+            "listEquipment": "danh sách thiết bị",
+            "addProject": "tạo dự án",
+            "add_new_project": "tạo mới dự án",
+            "edit_project": "sửa dự án"
+        },
+        "field": {
+            "startDate": "ngày bắt đầu",
+            "endDate": "ngày kết thúc",
+            "days": "số ngày",
+            "amount": "amount",
+            "type": "loại dự án",
+            "client": "khách hàng",
+            "equipment": "thiết bị"
+        }
+    },
+    "project_type": {
+        "label": {
+            "add_new_project_type": "thêm loại dự án mới",
+            "edit_project_type": "sửa loại dự án"
+        }
+    },
+    "product": {
+        "label": {
+            "title": "sản phẩm",
+            "listProduct": "danh sách sản phẩm",
+            "listProductType": "danh sách loại sản phẩm",
+            "listEquipment": "danh sách thiết bị",
+            "addProduct": "thêm sản phẩm",
+            "add_new_product": "thêm sản phẩm",
+            "edit_product": "sửa sản phẩm"
+        },
+        "field": {
+            "price": "giá",
+            "unit": "đơn vị",
+            "type": "loại sản phẩm",
+            "amount": "số lượng",
+            "client": "khách hàng"
+        }
+    },
+    "product_type": {
+        "label": {
+            "add_new_product_type": "thêm loại sản phẩm mới",
+            "edit_product_type": "sửa loại sản phẩm"
+        }
+    },
+    "equipment": {
+        "label": {
+            "title": "thiết bị",
+            "listEquipment": "danh sách thiết bị",
+            "listEquipmentType": "danh sách loại thiết bị",
+            "add_new_equipment": "thêm thiết bị mới",
+            "edit_equipment": "sửa thiết bị",
+            "description": "mô tả",
+            "serialNumber": "số seri",
+            "mark": "mark",
+            "unit": "đơn vị",
+            "model": "model",
+            "version": "phiên bản",
+            "purchaseDate": "ngày mua",
+            "transferDate": "ngày chuyển giao",
+            "lossDate": "ngày mất",
+            "maintenanceDate": "ngày bảo trì",
+            "type": "loại thiết bị"
+        },
+        "field": {
+            "serialNumber": "số seri",
+            "mark": "mark",
+            "model": "mẫu",
+            "version": "phiên bản",
+            "purchaseDate": "ngày mua",
+            "transferDate": "ngày chuyển giao",
+            "lossDate": "ngày mất",
+            "maintenanceDate": "ngày bảo trì",
+            "type": "loại thiết bị"
+        }
+    },
+    "equipment_type": {
+        "label": {
+            "add_new_equipment_type": "thêm loại thiết bị mới",
+            "edit_equipment_type": "sửa loại thiết bị"
+        }
+    },
+    "vehicle": {
+        "label": {
+            "add_new_vehicle": "tạo mới phương tiện",
+            "edit_vehicle": "sửa phương tiện",
+            "title": "phương tiện",
+            "listVehicle": "danh sách phương tiện",
+            "addVehicle": "thêm phương tiện",
+            "bicycle": "xe đạp",
+            "electric_bicycle": "xe đạp điện",
+            "motorcycle": "xe mô tô",
+            "electric_motorcycle": "xe mô tô điện",
+            "car": "xe ô tô",
+            "electric_car": "xe ô tô điện",
+            "truck": "xe tải",
+            "other": "khác"
+        },
+        "field": {
+            "type": "loại"
+        }
+    },
+    "employee": {
+        "label": {
+            "add_new_employee": "thêm nhân viên",
+            "edit_employee": "sửa nhân viên",
+            "title": "nhân viên",
+            "listEmployee": "danh sách nhân viên",
+            "addEmployee": "thêm nhân viên"
+        },
+        "field": {
+            "avatar": "avatar",
+            "isUser": "tài khoản",
+            "username": "tên tài khoản",
+            "role": "quyền",
+            "superadmin": "quản trị viện cấp cao",
+            "admin": "quản lý",
+            "employee": "nhân viên",
+            "password": "mật khẩu",
+            "changePassword": "thay đổi mật khẩu",
+            "confirmPassword": "xác nhận mật khẩu",
+            "newPassword": "mật khẩu mới",
+            "isDriver": "tài xế",
+            "email": "email",
+            "fullName": "họ và tên",
+            "firstName": "tên",
+            "lastName": "họ",
+            "phoneNumber": "số điện thoại",
+            "birthday": "ngày sinh",
+            "gender": "giới tính",
+            "male": "nam",
+            "female": "nữ",
+            "secret": "bí mật",
+            "disabled": "vô hiệu hóa"
+        }
+    },
+    "client": {
+        "label": {
+            "add_new_client": "tạo mới khách hàng",
+            "edit_client": "sửa khách hàng",
+            "title": "khách hàng",
+            "listClient": "danh sách khách hàng",
+            "addClient": "tạo khách hàng"
+        },
+        "field": {
+            "name": "tên",
+            "code": "mã",
+            "email": "email",
+            "phoneNumber": "số điện thoại",
+            "prospective": "tiềm năng",
+            "manager": "quản lý",
+            "type": "loại",
+            "type_personal": "cá nhân",
+            "type_organization": "tổ chức"
+        }
+    },
+    "transportOrder": {
+        "label": {
+            "add_new_transport": "tạo mới đơn hàng",
+            "edit_transport": "sửa đơn hàng",
+            "title": "đơn hàng",
+            "listTransport": "danh sách đơn hàng",
+            "addTransport": "add transport order",
+            "listProduct": "danh sách sản phẩm",
+            "change_status_success": "thay đổi trạng thái thành công",
+            "confirm_change_status": "bạn có chắc chắn thay đổi trạng thái đơn hàng vận chuyển không?",
+            "create_invoice_success": "tạo hóa đơn thành công",
+            "confirm_create_invoice": "bạn có chắc chắn tạo hóa đơn không?",
+            "changeStatus": "thay đổi trạng thái"
+        },
+        "field": {
+            "title": "tiêu đề",
+            "note": "ghi chú",
+            "expectedDepartAt": "thời gian dự kiến khởi hành",
+            "expectedArrivalAt": "thời gian dự kiến đến",
+            "departAt": "thời gian khởi hành",
+            "arrivalAt": "thời gian đến",
+            "project": "dự án",
+            "client": "khách hàng",
+            "addInfoClient": "thêm thông tin khách hàng",
+            "clientName": "tên khách hàng",
+            "clientEmail": "email",
+            "clientPhoneNumber": "số điện thoại khách hàng",
+            "clientDescription": "mô tả khách hàng",
+            "comment": "bình luận",
+            "price": "giá",
+            "amount": "số lượng",
+            "status": "trạng thái",
+            "invoice": "hóa đơn",
+            "status_waiting": "chờ",
+            "status_completed": "hoàn thành",
+            "status_cancelled": "hủy"
+        }
+    },
+    "invoice": {
+        "label": {
+            "add_new_invoice": "tạo mới hóa đơn",
+            "edit_invoice": "sửa hóa đơn",
+            "title": "hóa đơn",
+            "listInvoice": "danh sách hóa đơn",
+            "addInvoice": "thêm hóa đơn",
+            "listProduct": "danh sách sản phẩm",
+            "change_status_success": "thay đổi trạng thái thành công",
+            "confirm_change_status": "bạn có chắc chắn thay đổi trạng thái hóa đơn không?",
+            "export_pdf_success": "xuất pdf thành công",
+            "confirm_export_pdf": "bạn có chắc chắn xuất pdf không?",
+            "send_pdf_success": "gửi pdf thành công",
+            "confirm_send_pdf": "bạn có chắc chắn gửi hóa đơn pdf cho khách hàng không?"
+        },
+        "field": {
+            "title": "tiêu đề",
+            "note": "ghi chú",
+            "exportDate": "ngày xuất",
+            "expiryDate": "ngày hết hạn",
+            "addInfoClient": "thêm thông tin khách hàng",
+            "clientName": "tên khách hàng",
+            "clientEmail": "email",
+            "clientPhoneNumber": "số điện thoại khách hàng",
+            "clientDescription": "mô tả khách hàng",
+            "comment": "bình luận",
+            "price": "giá",
+            "amount": "số lượng",
+            "status": "trạng thái",
+            "project": "dự án",
+            "client": "khách hàng",
+            "pdf": "pdf",
+            "transportOrder": "đơn hàng",
+            "product": "sản phẩm",
+            "status_draft": "nháp",
+            "status_accepted": "chấp nhận"
+        }
+    },
+    "gpsRoute": {
+        "label": {
+            "title": "lộ trình",
+            "listRoute": "danh sách lộ trình",
+            "transportOrder_info": "thông tin đơn hàng",
+            "vehicle_info": "thông tin phương tiện",
+            "driver_info": "thông tin lái xe",
+            "tracking": "tracking",
+            "list": "danh sách",
+            "map": "bản đồ",
+            "view_gps_point": "xem điểm gps"
+        },
+        "field": {
+            "vehicle": "phương tiện",
+            "transportOrder": "đơn hàng",
+            "driver": "lái xe",
+            "startAt": "bắt đầu từ",
+            "latitude": "kinh độ",
+            "longitude": "kinh độ",
+            "time": "thời gian",
+            "distance": "khoảng cách"
+        }
+    },
+    "account": {
+        "label": {
+            "title": "tài khoản"
+        },
+        "field": {
+        }
+    },
+    "login": {
+        "label": {
+            "login_success": "đăng nhập thành công",
+            "login": "đăng nhập",
+            "welcome": "xin chào, chào mừng bạn quay trở lại",
+            "loginText": "đăng nhập vào hệ thống TDT",
+            "forgot_passwordText": "quên mật khẩu | hệ thống TDT",
+            "forgot_password": "quên mật khẩu",
+            "reset_passwordText": "thay đổi mật khẩu | hệ thống TDT",
+            "reset_password": "thay đổi mật khẩu"
+        },
+        "field": {
+            "username": "tên tài khoản",
+            "password": "mật khẩu"
+        }
+    },
+    "home": {
+        "label": {
+            "revenue_statistics": "thống kê doanh thu",
+            "revenue": "doanh thu"
+        }
+    },
+    "backoffice": {
+        "label": {
+            "title": "backoffice",
+            "sync_address": "đồng bộ địa chỉ",
+            "sync_address_success": "đồng bộ địa chỉ thành công"
+        }
+    }
+}

@@ -1,0 +1,371 @@
+{
+    "language": "en",
+    "label": {
+        "name": "name",
+        "code": "code",
+        "logo": "logo",
+        "action": "action",
+        "want_delete": "do you want to delete?",
+        "save": "save",
+        "ok": "ok",
+        "cancel": "cancel",
+        "address_info": "address information",
+        "search": "enter keyword ...",
+        "no_more": "no more",
+        "yes": "yes",
+        "no": "no",
+        "stop": "stop",
+        "select": "--- select ---",
+        "confirm_delete": "are you sure you want to delete?",
+        "alert": "alert",
+        "new_success": "successful new creation",
+        "edit_success": "successfully edited",
+        "delete_success": "successful delete",
+        "home": "home",
+        "logout": "logout",
+        "upload_image": "upload image",
+        "field_required": "\"{{field}}\" is required",
+        "loading": "loading...",
+        "add": "add",
+        "error": "error",
+        "field_email": "\"{{field}}\" must be email format!",
+        "month": {
+            "m_1": "january",
+            "m_2": "february",
+            "m_3": "march",
+            "m_4": "april",
+            "m_5": "may",
+            "m_6": "june",
+            "m_7": "july",
+            "m_8": "august",
+            "m_9": "september",
+            "m_10": "october",
+            "m_11": "november",
+            "m_12": "december"
+        }
+    },
+    "module": {
+        "equipment": "equipment",
+        "equipmentType": "equipment type",
+        "project": "project",
+        "projectType": "project type",
+        "product": "product",
+        "productType": "product type",
+        "client": "client",
+        "employee": "employee",
+        "invoice": "invoice",
+        "gpsRoute": "route",
+        "transportOrder": "transport order",
+        "vehicle": "vehicle"
+    },
+    "field": {
+        "logo": "logo",
+        "name": "name",
+        "code": "code",
+        "description": "description",
+        "address": "address",
+        "address_country": "country",
+        "address_city": "city",
+        "address_postalCode": "postal code",
+        "address_description": "address description",
+        "address_province": "province",
+        "address_district": "district",
+        "address_ward": "ward"
+    },
+    "project": {
+        "label": {
+            "title": "project",
+            "listProject": "list project",
+            "listProjectType": "list project type",
+            "listEquipment": "list equipment",
+            "addProject": "add project",
+            "add_new_project": "add new project",
+            "edit_project": "edit project"
+        },
+        "field": {
+            "startDate": "start date",
+            "endDate": "end date",
+            "days": "days",
+            "amount": "amount",
+            "type": "project type",
+            "client": "client",
+            "equipment": "equipment"
+        }
+    },
+    "project_type": {
+        "label": {
+            "add_new_project_type": "add new project type",
+            "edit_project_type": "edit project type"
+        }
+    },
+    "product": {
+        "label": {
+            "title": "product",
+            "listProduct": "list product",
+            "listProductType": "list product type",
+            "listEquipment": "list equipment",
+            "addProduct": "add product",
+            "add_new_product": "add new product",
+            "edit_product": "edit product"
+        },
+        "field": {
+            "price": "price",
+            "unit": "unit",
+            "type": "product type",
+            "amount": "amount",
+            "client": "client"
+        }
+    },
+    "product_type": {
+        "label": {
+            "add_new_product_type": "add new product type",
+            "edit_product_type": "edit product type"
+        }
+    },
+    "equipment": {
+        "label": {
+            "title": "equipment",
+            "listEquipment": "list equipment",
+            "listEquipmentType": "list equipment type",
+            "add_new_equipment": "add new equipment",
+            "edit_equipment": "edit equipment",
+            "description": "description",
+            "serialNumber": "serial number",
+            "mark": "mark",
+            "unit": "unit",
+            "model": "model",
+            "version": "version",
+            "purchaseDate": "purchase date",
+            "transferDate": "transfer date",
+            "lossDate": "loss date",
+            "maintenanceDate": "maintenance date",
+            "type": "type"
+        },
+        "field": {
+            "serialNumber": "serial number",
+            "mark": "mark",
+            "model": "model",
+            "version": "version",
+            "purchaseDate": "purchase date",
+            "transferDate": "transfer date",
+            "lossDate": "loss date",
+            "maintenanceDate": "maintenance date",
+            "type": "equipment type"
+        }
+    },
+    "equipment_type": {
+        "label": {
+            "add_new_equipment_type": "add new equipment type",
+            "edit_equipment_type": "edit equipment type"
+        }
+    },
+    "vehicle": {
+        "label": {
+            "add_new_vehicle": "add new vehicle",
+            "edit_vehicle": "edit vehicle",
+            "title": "vehicle",
+            "listVehicle": "list vehicle",
+            "addVehicle": "add vehicle",
+            "bicycle": "bicycle",
+            "electric_bicycle": "electric bicycle",
+            "motorcycle": "motorcycle",
+            "electric_motorcycle": "electric motorcycle",
+            "car": "car",
+            "electric_car": "electric car",
+            "truck": "truck",
+            "other": "other"
+        },
+        "field": {
+            "type": "type"
+        }
+    },
+    "employee": {
+        "label": {
+            "add_new_employee": "add new employee",
+            "edit_employee": "edit employee",
+            "title": "employee",
+            "listEmployee": "list employee",
+            "addEmployee": "add employee"
+        },
+        "field": {
+            "avatar": "avatar",
+            "isUser": "is user",
+            "username": "username",
+            "role": "role",
+            "superadmin": "superadmin",
+            "admin": "admin",
+            "employee": "employee",
+            "password": "password",
+            "changePassword": "change password",
+            "confirmPassword": "confirm password",
+            "newPassword": "new password",
+            "isDriver": "is driver",
+            "email": "email",
+            "fullName": "full name",
+            "firstName": "first name",
+            "lastName": "lastName",
+            "phoneNumber": "phone number",
+            "birthday": "birthday",
+            "gender": "gender",
+            "male": "male",
+            "female": "female",
+            "secret": "secret",
+            "disabled": "disabled"
+        }
+    },
+    "client": {
+        "label": {
+            "add_new_client": "add new client",
+            "edit_client": "edit client",
+            "title": "client",
+            "listClient": "list client",
+            "addClient": "add client"
+        },
+        "field": {
+            "name": "name",
+            "code": "code",
+            "email": "email",
+            "phoneNumber": "phone number",
+            "prospective": "prospective",
+            "manager": "manager",
+            "type": "type",
+            "type_personal": "personal",
+            "type_organization": "organization"
+        }
+    },
+    "transportOrder": {
+        "label": {
+            "add_new_transport": "add new transport order",
+            "edit_transport": "edit transport order",
+            "title": "transport order",
+            "listTransport": "list transport",
+            "addTransport": "add transport order",
+            "listProduct": "list product",
+            "change_status_success": "successful status change",
+            "confirm_change_status": "are you sure to change transport order status?",
+            "create_invoice_success": "successful create invoice",
+            "confirm_create_invoice": "are you sure to create invoice?",
+            "changeStatus": "change status"
+        },
+        "field": {
+            "title": "title",
+            "note": "note",
+            "expectedDepartAt": "expected depart at",
+            "expectedArrivalAt": "expected arrival at",
+            "departAt": "depart at",
+            "arrivalAt": "arrival at",
+            "project": "project",
+            "client": "client",
+            "addInfoClient": "add info client",
+            "clientName": "client name",
+            "clientEmail": "email",
+            "clientPhoneNumber": "client phone number",
+            "clientDescription": "client description",
+            "comment": "comment",
+            "price": "price",
+            "amount": "amount",
+            "status": "status",
+            "invoice": "invoice",
+            "status_waiting": "waiting",
+            "status_completed": "completed",
+            "status_cancelled": "cancelled"
+        }
+    },
+    "invoice": {
+        "label": {
+            "add_new_invoice": "add new invoice",
+            "edit_invoice": "edit invoice",
+            "title": "invoice",
+            "listInvoice": "list invoice",
+            "addInvoice": "add invoice",
+            "listProduct": "list product",
+            "change_status_success": "successful status change",
+            "confirm_change_status": "are you sure to change invoice status?",
+            "export_pdf_success": "successful export pdf",
+            "confirm_export_pdf": "are you sure to export pdf?",
+            "send_pdf_success": "successful send pdf",
+            "confirm_send_pdf": "are you sure to send invoice pdf to client?"
+        },
+        "field": {
+            "title": "title",
+            "note": "note",
+            "exportDate": "export date",
+            "expiryDate": "expiry date",
+            "addInfoClient": "add info client",
+            "clientName": "client name",
+            "clientEmail": "email",
+            "clientPhoneNumber": "client phone number",
+            "clientDescription": "client description",
+            "comment": "comment",
+            "price": "price",
+            "amount": "amount",
+            "status": "status",
+            "project": "project",
+            "client": "client",
+            "pdf": "pdf",
+            "transportOrder": "transport order",
+            "product": "product",
+            "status_draft": "draft",
+            "status_accepted": "accepted"
+        }
+    },
+    "gpsRoute": {
+        "label": {
+            "title": "route",
+            "listRoute": "list route",
+            "transportOrder_info": "transport order info",
+            "vehicle_info": "vehicle info",
+            "driver_info": "driver info",
+            "tracking": "tracking",
+            "list": "list",
+            "map": "map",
+            "view_gps_point": "view gps point"
+        },
+        "field": {
+            "vehicle": "vehicle",
+            "transportOrder": "transport order",
+            "driver": "driver",
+            "startAt": "start at",
+            "latitude": "latitude",
+            "longitude": "longitude",
+            "time": "time",
+            "distance": "distance"
+        }
+    },
+    "account": {
+        "label": {
+            "title": "account"
+        },
+        "field": {
+        }
+    },
+    "login": {
+        "label": {
+            "login_success": "login successfully",
+            "login": "login",
+            "welcome": "hi, welcome back",
+            "loginText": "signin to TDT System",
+            "forgot_passwordText": "forgot password | TDT system",
+            "forgot_password": "forgot password",
+            "reset_passwordText": "reset password | TDT system",
+            "reset_password": "reset password"
+        },
+        "field": {
+            "username": "username",
+            "password": "password"
+        }
+    },
+    "home": {
+        "label": {
+            "revenue_statistics": "revenue statistics",
+            "revenue": "revenue"
+        }
+    },
+    "backoffice": {
+        "label": {
+            "title": "backoffice",
+            "sync_address": "sync address",
+            "sync_address_success": "sync address successfully"
+        }
+    }
+}
