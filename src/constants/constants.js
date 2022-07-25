@@ -40,7 +40,7 @@ export const GPS_ROUTE_STATUS_MOVING = 'moving';
 export const VEHICLE_STATUS_AVAILABLE = 'available';
 export const VEHICLE_STATUS_MOVING = 'moving';
 export const REAL_TIME_GPS_POINT = 'realtimeGpsPoint';
-export const BASE_API = 'https://tdt-app-api.herokuapp.com/'
+export const BASE_API = 'https://erp-transport-api.herokuapp.com/'
 
 // export const BASE_API = 'http://localhost:4000/'
 
