@@ -319,7 +319,7 @@ const Tracking = (props) => {
                         {t('gpsRoute.field.vehicle')}
                     </div>
                     <Select
-                        defaultValue={null}
+                        value={vehicleSelected}
                         showSearch
                         optionFilterProp="children"
                         filterOption={(input, option) => option.children.toLowerCase().includes(input.toLowerCase())}
