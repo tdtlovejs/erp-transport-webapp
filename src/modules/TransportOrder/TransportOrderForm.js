@@ -45,11 +45,12 @@ const styles = {
         justifyContent: 'center',
         display: 'flex',
         flexDirection: 'column',
-        '& .ant-form-item': {
+        '& .ant-form-item, .ant-form-item-row': {
             display: 'flex',
             flexDirection: 'column',
             padding: '0 2px',
             margin: '5px 0',
+            width: '100%',
             '& .ant-form-item-label': {
                 textAlign: 'left'
             },
@@ -91,8 +92,9 @@ const styles = {
                 '& .equipmentItemText': {
                     padding: 5,
                 },
-                '& .ant-form-item': {
+                '& .ant-form-item, .ant-form-item-row': {
                     flex: 1,
+                    width: '100%',
                 }
             },
         }

@@ -32,10 +32,51 @@ import truck from "../../assets/images/truck.png";
 import other from "../../assets/images/other.png";
 import {useTranslation} from "react-i18next";
 import ViewItem from "../../theme/ViewItem";
-import {Image} from "antd";
+import {Image, Select} from "antd";
 
 
 const styles = {
+    container: {
+
+    },
+    header: {
+        display: 'flex',
+        alignItems: 'center',
+        paddingBottom: 10,
+    },
+    selectWrapper: {
+        padding: '0 20px',
+        '& .title': {
+            fontWeight: '600',
+        }
+    },
+    selectVehicle: {
+        width: 180,
+        maxHeight: 50,
+        '& .ant-select-selector': {
+            height: '50px!important',
+        }
+    },
+    optionVehicle: {
+        display: 'flex',
+        alignItems: 'center',
+        width: 240,
+        '& .vehicleLeft': {
+            width: 30,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+        },
+        '& img': {
+            height: 24,
+            width: 24
+        },
+        '& .vehicleRight': {
+            '& .vehicleName': {
+
+            },
+        }
+    },
     mapElement: {
         // height: 'calc(100vh - 185px)',
         position: 'relative',
@@ -106,6 +147,9 @@ const styles = {
         }
     }
 }
+
+const {Option} = Select;
+
 const Tracking = (props) => {
     const {
         classes
@@ -113,7 +157,11 @@ const Tracking = (props) => {
     const {t} = useTranslation();
     const socketRef = useRef();
     const [vehicles, setVehicles] = useState([]);
+    const [vehicleSelected, setVehicleSelected] = useState(null);
+
     const [dataGpsPoint, setDataGpsPoint] = useState({});
+    const [pointCenter, setPointCenter] = useState(null);
+    const [loading, setLoading] = useState(false);
     useEffect(() => {
         getVehicles();
     }, [])
@@ -158,67 +206,52 @@ const Tracking = (props) => {
 
 
 
-    let latitude = null;
-    let longitude = null;
-    Object.entries(dataGpsPoint).forEach(([key, value]) => {
-        if (!latitude || !longitude) {
-            latitude = value.latitude;
-            longitude = value.longitude;
+    // let latitude = null;
+    // let longitude = null;
+    // Object.entries(dataGpsPoint).forEach(([key, value]) => {
+    //     if (!latitude || !longitude) {
+    //         latitude = value.latitude;
+    //         longitude = value.longitude;
+    //     }
+    // })
+    // console.log(dataGpsPoint)
+    useEffect(() => {
+        if (loading) {
+            setTimeout(() => {
+                setLoading(false);
+            }, 1000)
         }
-    })
-
-    const showIcon = (item) => {
-        switch (item?.type) {
-            case VEHICLE_TYPE_BICYCLE:
-                return L.icon({
-                    iconUrl: bicycle,
-                    iconSize: [36, 36],
-                    iconAnchor: [24, 48]
-                })
-            case VEHICLE_TYPE_ELECTRIC_BICYCLE:
-                return L.icon({
-                    iconUrl: electric_bicycle,
-                    iconSize: [36, 36],
-                    iconAnchor: [24, 48]
-                })
-            case VEHICLE_TYPE_MOTORCYCLE:
-                return L.icon({
-                    iconUrl: motorcycle,
-                    iconSize: [36, 36],
-                    iconAnchor: [24, 48]
-                })
-            case VEHICLE_TYPE_ELECTRIC_MOTORCYCLE:
-                return L.icon({
-                    iconUrl: electric_motorcycle,
-                    iconSize: [36, 36],
-                    iconAnchor: [24, 48]
-                })
-            case VEHICLE_TYPE_CAR:
-                return L.icon({
-                    iconUrl: car,
-                    iconSize: [36, 36],
-                    iconAnchor: [24, 48]
-                })
-            case VEHICLE_TYPE_ELECTRIC_CAR:
-                return L.icon({
-                    iconUrl: electric_car,
-                    iconSize: [36, 36],
-                    iconAnchor: [24, 48]
-                })
-            case VEHICLE_TYPE_TRUCK:
-                return L.icon({
-                    iconUrl: truck,
-                    iconSize: [36, 36],
-                    iconAnchor: [24, 48]
-                })
-            default:
-                return L.icon({
-                    iconUrl: other,
-                    iconSize: [36, 36],
-                    iconAnchor: [24, 48]
-                })
+    }, [loading])
+    useEffect(() => {
+        setLoading(true);
+        if (vehicleSelected) {
+            let latitude = null;
+            let longitude = null;
+            Object.entries(dataGpsPoint).forEach(([key, value]) => {
+                if ((!latitude || !longitude) && value.gpsRoute?.vehicle?._id === vehicleSelected._id) {
+                    latitude = value.latitude;
+                    longitude = value.longitude;
+                    setPointCenter({
+                        latitude,
+                        longitude
+                    })
+                }
+            })
+        } else {
+            let latitude = null;
+            let longitude = null;
+            Object.entries(dataGpsPoint).forEach(([key, value]) => {
+                if (!latitude || !longitude) {
+                    latitude = value.latitude;
+                    longitude = value.longitude;
+                    setPointCenter({
+                        latitude,
+                        longitude
+                    })
+                }
+            })
         }
-    }
+    }, [vehicleSelected])
 
     const showTooltip = (gpsPoint) => {
         const gpsRoute = gpsPoint.gpsRoute;
@@ -269,9 +302,56 @@ const Tracking = (props) => {
             </div>
         )
     }
+
     return (
-        <div>
-            <div style={{
+        <div className={classes.container}>
+            <div className={classes.header}>
+                <div className={classes.selectWrapper}>
+                    <div className="title">
+                        {t('gpsRoute.field.vehicle')}
+                    </div>
+                    <Select
+                        defaultValue={null}
+                        showSearch
+                        optionFilterProp="children"
+                        filterOption={(input, option) => option.children.toLowerCase().includes(input.toLowerCase())}
+                        placeholder={t('label.select')}
+                        allowClear
+                        className={classes.selectVehicle}
+                        onChange={(value) => {
+                            setVehicleSelected(value)
+                        }}
+                    >
+                        <Option value={null}>All vehicles</Option>
+                        {
+                            vehicles.map((item) => {
+                                const fileId = item?.logo?.fileId;
+                                const linkImage = fileId ? `https://drive.google.com/uc?export=view&id=${fileId}` : null;
+                                return (
+                                    <Option value={item._id}>
+                                        <div className={classes.optionVehicle}>
+                                            <div className="vehicleLeft">
+                                                {linkImage && <div className="logoCellWrapper">
+                                                    <Image
+                                                        className="logoCellImg"
+                                                        src={linkImage}
+                                                    />
+                                                </div>}
+                                            </div>
+                                            <div className="vehicleRight">
+                                                <div className="vehicleName">
+                                                    {item.name}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Option>
+                                )
+                            })
+                        }
+                    </Select>
+                </div>
+            </div>
+            {loading ? <></> : <div style={{
                 // background: 'red',
                 overflow: 'hidden',
                 height: 'calc(100vh - 180px)'
@@ -280,7 +360,7 @@ const Tracking = (props) => {
             >
                 <Map
                     zoom={13}
-                    center={(latitude && longitude) ? [latitude, longitude] : [21.007025, 105.843136]}
+                    center={pointCenter ? [pointCenter.latitude, pointCenter.longitude] : [21.007025, 105.843136]}
                     zoomControl={false}
                 >
                     <TileLayer
@@ -288,7 +368,12 @@ const Tracking = (props) => {
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
                     {
-                        vehicles.map((item) => {
+                        vehicles.filter(item => {
+                            if (vehicleSelected) {
+                                return item._id === vehicleSelected._id;
+                            }
+                            return true;
+                        }).map((item) => {
                             if (item.status === VEHICLE_STATUS_MOVING && dataGpsPoint.hasOwnProperty(item._id)) {
                                 const latitude = dataGpsPoint[item._id]?.latitude;
                                 const longitude = dataGpsPoint[item._id]?.longitude;
@@ -318,7 +403,7 @@ const Tracking = (props) => {
                     }
 
                 </Map>
-            </div>
+            </div>}
         </div>
     )
 }

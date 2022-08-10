@@ -26,7 +26,7 @@ const styles = {
     },
     header: {
         display: 'flex',
-        alignItem: 'center',
+        alignItems: 'center',
     },
     selectWrapper: {
         padding: '0 20px',
@@ -37,15 +37,18 @@ const styles = {
     selectVehicle: {
         width: 180,
         maxHeight: 50,
+        '& .ant-select-selector': {
+            height: '50px!important',
+        }
     },
     optionVehicle: {
         display: 'flex',
-        alignItem: 'center',
+        alignItems: 'center',
         width: 240,
         '& .vehicleLeft': {
             width: 30,
             display: 'flex',
-            alignItem: 'center',
+            alignItems: 'center',
             justifyContent: 'center',
         },
         '& img': {

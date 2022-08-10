@@ -94,10 +94,11 @@ const styles = {
             padding: '10px 0',
             width: 360
         },
-        '& .ant-form-item': {
+        '& .ant-form-item, .ant-form-item-row': {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'flex-start',
+            width: '100%',
             '& .ant-form-item-label': {
                 width: '100%',
                 textAlign: 'left',
