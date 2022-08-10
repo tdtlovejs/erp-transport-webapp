@@ -231,12 +231,16 @@ const Tracking = (props) => {
                 if ((!latitude || !longitude) && value.gpsRoute?.vehicle?._id === vehicleSelected._id) {
                     latitude = value.latitude;
                     longitude = value.longitude;
-                    setPointCenter({
-                        latitude,
-                        longitude
-                    })
                 }
             })
+            if (latitude && longitude) {
+                setPointCenter({
+                    latitude,
+                    longitude
+                })
+            } else {
+                setPointCenter(null)
+            }
         } else {
             let latitude = null;
             let longitude = null;
@@ -244,12 +248,16 @@ const Tracking = (props) => {
                 if (!latitude || !longitude) {
                     latitude = value.latitude;
                     longitude = value.longitude;
-                    setPointCenter({
-                        latitude,
-                        longitude
-                    })
                 }
             })
+            if (latitude && longitude) {
+                setPointCenter({
+                    latitude,
+                    longitude
+                })
+            } else {
+                setPointCenter(null)
+            }
         }
     }, [vehicleSelected])
 
