@@ -215,14 +215,14 @@ function TransportOrderList(props) {
                         >
                             <FiEdit color={"green"} size={"18px"}/>
                         </Link>}
-                        <Popconfirm
-                            title={t('label.want_delete')}
-                            onConfirm={() => handleDelete(record._id)}
-                        >
-                            <a>
-                                <RiDeleteBin6Line color={"red"} size={"18px"}/>
-                            </a>
-                        </Popconfirm>
+                        {/*<Popconfirm*/}
+                        {/*    title={t('label.want_delete')}*/}
+                        {/*    onConfirm={() => handleDelete(record._id)}*/}
+                        {/*>*/}
+                        {/*    <a>*/}
+                        {/*        <RiDeleteBin6Line color={"red"} size={"18px"}/>*/}
+                        {/*    </a>*/}
+                        {/*</Popconfirm>*/}
                         {record.status === TRANSPORT_STATUS_COMPLETED && <>
                             {
                                 !record.invoice &&
