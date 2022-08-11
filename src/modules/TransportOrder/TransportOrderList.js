@@ -403,7 +403,7 @@ function TransportOrderList(props) {
                                                     <ViewItem
                                                         label={t('transportOrder.field.departAt')}
                                                         view={
-                                                            record.invoice?.departAt
+                                                            record.departAt
                                                             ?
                                                             <div className={classes.timeCell}>
                                                                 <div>{record.departAt  ? moment(record.departAt ).format('LL') : ''}</div>
