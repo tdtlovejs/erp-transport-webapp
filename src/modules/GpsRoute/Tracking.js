@@ -33,6 +33,8 @@ import other from "../../assets/images/other.png";
 import {useTranslation} from "react-i18next";
 import ViewItem from "../../theme/ViewItem";
 import {Image, Select} from "antd";
+import latitudeIcon from "../../assets/images/latitude.png";
+import longitudeIcon from "../../assets/images/longitude.png";
 
 
 const styles = {
@@ -131,7 +133,19 @@ const styles = {
         },
     },
     tooltipWrapper: {
+        borderRadius: 20
+    },
+    coordinateCell: {
+        display: 'flex',
+        alignItems: 'center',
+        '& img': {
+            width: 24,
+            height: 24,
+            marginRight: 5,
+        },
+        '& div': {
 
+        }
     },
     vehicleType: {
         display: 'flex',
@@ -184,9 +198,16 @@ const Tracking = (props) => {
             const vehicle = dataGot.vehicle;
             const gpsPoint = dataGot.gpsPoint;
             if (vehicle && gpsPoint) {
+                console.log(dataGot)
                 setDataGpsPoint(prev => ({
                     ...prev,
-                    [vehicle._id] : gpsPoint
+                    [vehicle._id] : {
+                        ...gpsPoint,
+                        gpsRoute: {
+                            ...dataGot.gpsRoute,
+                            vehicle: vehicle
+                        }
+                    }
                 }))
                 setVehicles(prev => prev.map(item => {
                     if (item._id === vehicle._id) {
@@ -268,6 +289,18 @@ const Tracking = (props) => {
 
         return (
             <div className={classes.tooltipWrapper}>
+                <div className={classes.coordinateCell}>
+                    <img src={latitudeIcon} alt=""/>
+                    <div>
+                        {gpsPoint?.latitude ?? ""}
+                    </div>
+                </div>
+                <div className={classes.coordinateCell}>
+                    <img src={longitudeIcon} alt=""/>
+                    <div>
+                        {gpsPoint?.longitude ?? ""}
+                    </div>
+                </div>
                 <ViewItem
                     label={t('gpsRoute.field.vehicle')}
                     isViewComponent={true}
@@ -310,7 +343,17 @@ const Tracking = (props) => {
             </div>
         )
     }
-
+    const vehiclesMoving = vehicles.filter(item => item.status === VEHICLE_STATUS_MOVING && dataGpsPoint.hasOwnProperty(item._id));
+    useEffect(() => {
+        if (vehicleSelected) {
+            const check = vehiclesMoving.find(item => item._id === vehicleSelected);
+            if (!check) {
+                setVehicleSelected(null);
+            }
+        }
+    }, [vehiclesMoving])
+    console.log('vehicleSelected ',vehicleSelected)
+    console.log('vehicles ',vehicles)
     return (
         <div className={classes.container}>
             <div className={classes.header}>
@@ -332,7 +375,7 @@ const Tracking = (props) => {
                     >
                         <Option value={null}>All vehicles</Option>
                         {
-                            vehicles.map((item) => {
+                            vehiclesMoving.map((item) => {
                                 const fileId = item?.logo?.fileId;
                                 const linkImage = fileId ? `https://drive.google.com/uc?export=view&id=${fileId}` : null;
                                 return (
@@ -378,7 +421,7 @@ const Tracking = (props) => {
                     {
                         vehicles.filter(item => {
                             if (vehicleSelected) {
-                                return item._id === vehicleSelected._id;
+                                return item._id === vehicleSelected;
                             }
                             return true;
                         }).map((item) => {
