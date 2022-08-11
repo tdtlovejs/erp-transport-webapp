@@ -257,6 +257,7 @@ const TransportOrderForm = (props) => {
             formData.append('products', JSON.stringify(values.products.map((item, index) => {
                 return ({
                     ...item,
+                    amount: item.amount ?? 0,
                     price: (Array.isArray(initialForm?.prices) && initialForm.prices.length > index) ? initialForm.prices[index] : ''
                 })
             })));
