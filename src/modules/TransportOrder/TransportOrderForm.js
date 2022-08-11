@@ -75,6 +75,9 @@ const styles = {
             '& .equipmentItem': {
                 display: 'flex',
                 alignItems: 'center',
+                '& .selectProduct': {
+                    width: '240px!important'
+                },
                 '& .inputPrice': {
                     textAlign: 'right',
                     backgroundColor: '#F5F5F5!important',
@@ -626,9 +629,10 @@ const TransportOrderForm = (props) => {
                                                                             ]}
                                                                         >
                                                                             <Select
-                                            showSearch
-                                            optionFilterProp="children"
-                                            filterOption={(input, option) => option.children.toLowerCase().includes(input.toLowerCase())}
+                                                                                className="selectProduct"
+                                                                                showSearch
+                                                                                optionFilterProp="children"
+                                                                                filterOption={(input, option) => option.children.toLowerCase().includes(input.toLowerCase())}
                                                                                 placeholder={t('label.select')}
                                                                                 // allowClear
                                                                                 onChange={(value) => {

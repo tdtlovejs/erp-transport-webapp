@@ -75,6 +75,9 @@ const styles = {
             '& .equipmentItem': {
                 display: 'flex',
                 alignItems: 'center',
+                '& .selectProduct': {
+                    width: '240px!important'
+                },
                 '& .inputPrice': {
                     // border: '1px solid #d9d9d9',
                     // padding: '4px 11px',
@@ -583,6 +586,7 @@ const InvoiceForm = (props) => {
                                                                             ]}
                                                                         >
                                                                             <Select
+                                                                                className="selectProduct"
                                             showSearch
                                             optionFilterProp="children"
                                             filterOption={(input, option) => option.children.toLowerCase().includes(input.toLowerCase())}
