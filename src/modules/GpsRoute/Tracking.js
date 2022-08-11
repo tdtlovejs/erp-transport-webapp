@@ -205,7 +205,7 @@ const Tracking = (props) => {
                         ...gpsPoint,
                         gpsRoute: {
                             ...dataGot.gpsRoute,
-                            vehicle: vehicle
+                            // vehicle: vehicle
                         }
                     }
                 }))
