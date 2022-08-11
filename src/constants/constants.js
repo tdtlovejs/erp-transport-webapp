@@ -50,7 +50,7 @@ export const INVOICE_STATUS_ACCEPTED = 'accepted';
 export const TRANSPORT_STATUS_WAITING = 'waiting';
 export const TRANSPORT_STATUS_COMPLETED = 'completed';
 export const TRANSPORT_STATUS_CANCELED = 'cancelled';
-
+export const TRANSPORT_STATUS_MOVING = 'moving';
 export const VIEW_TYPE_LIST = 'list';
 export const VIEW_TYPE_MAP = 'map';
 export const XS = 'xs';

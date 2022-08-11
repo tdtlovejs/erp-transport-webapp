@@ -19,13 +19,14 @@ import {withStyles} from "@mui/styles";
 import InvoiceICon from "../../assets/images/invoice.png";
 import {
     TRANSPORT_STATUS_CANCELED,
-    TRANSPORT_STATUS_COMPLETED,
+    TRANSPORT_STATUS_COMPLETED, TRANSPORT_STATUS_MOVING,
     TRANSPORT_STATUS_WAITING
 } from "../../constants/constants";
 import transportApi from "../../api/transportApi";
 import transport_completed from "../../assets/images/transport_completed.png";
 import transport_canceled from "../../assets/images/transport_canceled.png";
 import transport_waiting from "../../assets/images/transport_waiting.png";
+import transport_moving from "../../assets/images/transport_moving.png";
 import {AiOutlineArrowRight} from "react-icons/ai";
 import ViewBlock from "../../theme/ViewBlock";
 import moment from "moment";
@@ -177,6 +178,10 @@ function TransportOrderList(props) {
                                 ?
                                 transport_canceled
                                 :
+                                text === TRANSPORT_STATUS_MOVING
+                                    ?
+                                    transport_moving
+                                    :
                                 null;
                 return (
                     <>
@@ -253,7 +258,7 @@ function TransportOrderList(props) {
                 }
                 return (
                     <Space size="middle">
-                        {record.status !== TRANSPORT_STATUS_COMPLETED && <>
+                        {record.status === TRANSPORT_STATUS_WAITING && <>
                             <Popconfirm
                                 title={t('transportOrder.label.confirm_change_status')}
                                 onConfirm={() => handleChangeStatus(record._id, TRANSPORT_STATUS_COMPLETED)}
@@ -270,23 +275,23 @@ function TransportOrderList(props) {
                                 </a>
                             </Popconfirm>
                         </>}
-                        {record.status !== TRANSPORT_STATUS_WAITING && <>
-                            <Popconfirm
-                                title={t('transportOrder.label.confirm_change_status')}
-                                onConfirm={() => handleChangeStatus(record._id, TRANSPORT_STATUS_WAITING)}
-                            >
-                                <a>
-                                    <div>
-                                        <AiOutlineArrowRight color={"blue"} size={"18px"}/> <img style={{
-                                        height: 24,
-                                    }} src={transport_waiting} alt=""/>
-                                    </div>
-                                    <div>
-                                        {t('transportOrder.field.status_waiting')}
-                                    </div>
-                                </a>
-                            </Popconfirm>
-                        </>}
+                        {/*{record.status !== TRANSPORT_STATUS_WAITING && <>*/}
+                        {/*    <Popconfirm*/}
+                        {/*        title={t('transportOrder.label.confirm_change_status')}*/}
+                        {/*        onConfirm={() => handleChangeStatus(record._id, TRANSPORT_STATUS_WAITING)}*/}
+                        {/*    >*/}
+                        {/*        <a>*/}
+                        {/*            <div>*/}
+                        {/*                <AiOutlineArrowRight color={"blue"} size={"18px"}/> <img style={{*/}
+                        {/*                height: 24,*/}
+                        {/*            }} src={transport_waiting} alt=""/>*/}
+                        {/*            </div>*/}
+                        {/*            <div>*/}
+                        {/*                {t('transportOrder.field.status_waiting')}*/}
+                        {/*            </div>*/}
+                        {/*        </a>*/}
+                        {/*    </Popconfirm>*/}
+                        {/*</>}*/}
                         {/*{record.status !== TRANSPORT_STATUS_CANCELED && <>*/}
                         {/*    <Popconfirm*/}
                         {/*        title={t('transportOrder.label.confirm_change_status')}*/}
