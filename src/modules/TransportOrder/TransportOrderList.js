@@ -406,8 +406,8 @@ function TransportOrderList(props) {
                                                             record.invoice?.departAt
                                                             ?
                                                             <div className={classes.timeCell}>
-                                                                <div>{record.invoice?.departAt  ? moment(record.invoice?.departAt ).format('LL') : ''}</div>
-                                                                <div>{record.invoice?.departAt  ? moment(record.invoice?.departAt ).format('LT') : ''}</div>
+                                                                <div>{record.departAt  ? moment(record.departAt ).format('LL') : ''}</div>
+                                                                <div>{record.departAt  ? moment(record.departAt ).format('LT') : ''}</div>
                                                             </div>
                                                                 :
                                                                 <></>
@@ -418,11 +418,11 @@ function TransportOrderList(props) {
                                                     <ViewItem
                                                         label={t('transportOrder.field.arrivalAt')}
                                                         view={
-                                                            record.invoice?.arrivalAt
+                                                            record?.arrivalAt
                                                                 ?
                                                                 <div className={classes.timeCell}>
-                                                                    <div>{record.invoice?.arrivalAt  ? moment(record.invoice?.arrivalAt ).format('LL') : ''}</div>
-                                                                    <div>{record.invoice?.arrivalAt  ? moment(record.invoice?.arrivalAt ).format('LT') : ''}</div>
+                                                                    <div>{record.arrivalAt  ? moment(record.arrivalAt ).format('LL') : ''}</div>
+                                                                    <div>{record.arrivalAt  ? moment(record.arrivalAt ).format('LT') : ''}</div>
                                                                 </div>
                                                                 :
                                                                 <></>
