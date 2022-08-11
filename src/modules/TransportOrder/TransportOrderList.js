@@ -348,6 +348,10 @@ function TransportOrderList(props) {
                                             ?
                                             transport_canceled
                                             :
+                                            record.status === TRANSPORT_STATUS_MOVING
+                                                ?
+                                                transport_moving
+                                            :
                                             null;
                             // const addressClientProvince = record.clientAddress?.province ? JSON.parse(record.clientAddress.province)?.label ?? "" : '';
                             // const addressClientDistrict = record.clientAddress?.district ? JSON.parse(record.clientAddress.district)?.label ?? "" : '';
